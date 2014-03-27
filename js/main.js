@@ -2,8 +2,9 @@
 	var emoji_mapping = [];
 	var setupEmoji = function(){
 		emoji.include_title = true;
+		emoji.img_path = "/emoji-addr/emoji/";
 		
-		$.getJSON("/res/emojimapping.json", function(mapping){
+		$.getJSON("./res/emojimapping.json", function(mapping){
 			emoji_mapping = mapping;
 		});
 	}
