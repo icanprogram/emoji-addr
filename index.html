@@ -11,17 +11,31 @@
 			<header class="page-header">
 				<h1>Encode coin addresses as emoji's<br><small>Just because I wanted to prove it to Aleks_N</small></h1>
 			</header>
-			<section id="input">
-				<p class="text-center lead">Enter your coin address below to get the emoji representation</p>
-				<form>
-					<input class="form-control block input-lg text-center" type="text" id="address">
-				</form>
+			<section id="encoding">
+				<section id="input">
+					<p class="text-center lead">Enter your coin address below to get the emoji representation</p>
+					<form>
+						<input class="form-control block input-lg text-center" type="text" id="address">
+					</form>
+				</section>
+				<section id="output">
+					<p class="text-center lead">Here's your coin address as a list of emoji's:</p>
+					<p id="emojis" class="text-center"></p>
+					<p class="text-center lead">And here's it copyable</p>
+					<pre id="emojis-flat" class="text-center"></pre>
+				</section>
 			</section>
-			<section id="output">
-				<p class="text-center lead">Here's your coin address as a list of emoji's:</p>
-				<p id="emojis" class="text-center"></p>
-				<p class="text-center lead">And here's it copyable</p>
-				<pre id="emojis-flat" class="text-center"></pre>
+			<section id="decoding">
+				<section id="d_input">
+					<p class="text-center lead">Paste emoji's below to get the coin address</p>
+					<form>
+						<input class="form-control block input-lg text-center" type="text" id="emojis-input">
+					</form>
+				</section>
+				<section id="d_output">
+					<p class="text-center lead">Here's the coin address:</p>
+					<p id="d_coinaddress" class="text-center"></p>
+				</section>
 			</section>
 		</div>
 		<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>

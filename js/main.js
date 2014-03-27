@@ -1,3 +1,13 @@
+Array.prototype.getKeyByValue = function(value) {
+	for(var key in this){
+		if(this.hasOwnProperty(key)){
+			if(this[key] === value){
+				return key;
+			}
+		}
+	}
+};
+
 (function($){
 	var emoji_mapping = [];
 	var setupEmoji = function(){
@@ -20,6 +30,18 @@
 			}
 			$("#emojis").html(emoji.replace_colons(emojis));
 			$("#emojis-flat").text(emojis);
+		});
+		
+		$("#emojis-input").on('keyup', function(e){
+			var emojis = $(this).val().substr(1, $(this).val().length-2).split("::"), address = "";
+			
+			
+			for(var i=0; i < emojis.length; i++){
+				var integer = parseInt(emoji_mapping.getKeyByValue(":" + emojis[i] + ":"));
+				address += base58.encode(integer);
+			}
+			
+			$("#d_coinaddress").text(address);
 		});
 	});
 })(jQuery);
