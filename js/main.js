@@ -35,7 +35,6 @@ Array.prototype.getKeyByValue = function(value) {
 		$("#emojis-input").on('keyup', function(e){
 			var emojis = $(this).val().substr(1, $(this).val().length-2).split("::"), address = "";
 			
-			
 			for(var i=0; i < emojis.length; i++){
 				var integer = parseInt(emoji_mapping.getKeyByValue(":" + emojis[i] + ":"));
 				address += base58.encode(integer);

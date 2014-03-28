@@ -6,6 +6,7 @@ var base58 = (function(alpha) {
             if(typeof enc!=='number' || enc !== parseInt(enc))
                 throw '"encode" only accepts integers.';
             var encoded = '';
+			if(enc == 0){ return "1"; }
             while(enc) {
                 var remainder = enc % base;
                 enc = Math.floor(enc / base);
